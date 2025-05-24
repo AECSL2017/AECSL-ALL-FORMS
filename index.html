@@ -1,172 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
   <title>Angikar Employees Co-operative Society Ltd.</title>
   <style>
-    .form-menu {
-  position: fixed;
-  top: 50%;
-  left: 20px;
-  transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.7);
-  padding: 12px;
-  border-radius: 8px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  z-index: 1001;
-}
-
-.form-menu button {
-  background-color: #1e90ff;
-  color: green;
-  border: none;
-  padding: 8px 12px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 14px;
-  transition: background-color 0.3s;
-}
-.form-menu button:hover {
-  background-color: #63b3ed;
-}
-<script>
-  function scrollToSection(id) {
-    document.getElementById(id).scrollIntoView({
-      behavior: 'smooth'
-    });
-  }
-</script>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       background: url('Flux_Dev_A_majestic_Islamic_Mosque_stands_serenely_in_front_of_0.jpg') no-repeat center center fixed;
       background-size: cover;
-      color: yellow;
+      color: white;
       text-align: center;
+      padding-top: 300px;
     }
+
     header {
-  padding: 10px 10px 10px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 1000;
     }
-    <!-- Floating Chart Box -->
-<div class="form-menu">
-  <button onclick="scrollToSection('member')">🧾 New Member Form</button>
-  <button onclick="scrollToSection('investment')">💰 Investment Form</button>
-  <button onclick="scrollToSection('withdrawal')">🏦 Withdrawal Form</button>
-  <button onclick="scrollToSection('Increase/Decrease')">🔄 Increase/Decrease</button>
-  <button onclick="scrollToSection('final Settlement')">✅ Final Settlement</button>
-</div>
 
     header img {
-  width: 120px;
-  height: auto;
-  margin-bottom: 5px;
+      width: 160px;
+      height: auto;
+      margin-bottom: 10px;
     }
-    h1 {
-      font-size: 32px;
-      margin: 10px 0;
+
+    header h1 {
+      margin: 10px 0 5px;
+      font-size: 28px;
     }
-    h2, p {
+
+    header h3 {
       margin: 5px 0;
+      font-size: 18px;
     }
-    .contact {
-      margin-bottom: 40px;
+
+    header p {
+      margin: 4px 0;
       font-size: 16px;
     }
-    .section {
-      background: rgba(0, 0, 0, 0.6);
-      margin: 20px auto;
-      padding: 20px;
-      max-width: 800px;
-      border-radius: 12px;
-    }
-    .section h3 {
-      font-size: 24px;
-      margin-bottom: 15px;
-    }
-    .files {
+
+    .form-menu {
+      position: fixed;
+      top: 50%;
+      left: 20px;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.7);
+      padding: 12px;
+      border-radius: 8px;
       display: flex;
       flex-direction: column;
-      gap: 10px;
-      align-items: center;
+      gap: 8px;
+      z-index: 1001;
     }
-    .files a {
+
+    .form-menu button {
+      background-color: #1e90ff;
       color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background-color 0.3s;
+    }
+
+    .form-menu button:hover {
+      background-color: #63b3ed;
+    }
+
+    .section {
+      margin: 60px auto;
+      max-width: 800px;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .section h3 {
+      font-size: 22px;
+      margin-bottom: 15px;
+    }
+
+    .section a {
+      color: #87cefa;
+      display: block;
+      margin: 6px 0;
       text-decoration: none;
-      background: #1e90ff;
-      padding: 10px 20px;
-      border-radius: 6px;
-      transition: background 0.3s ease;
     }
-    .files a:hover {
-      background: #63b3ed;
-    }
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 24px;
-      }
-      .section h3 {
-        font-size: 20px;
-      }
+
+    .section a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
 
   <header>
-    <img src="Angikar-Logo-Final.png" alt="Company Logo">
+    <img src="Angikar-Logo-Final.png" alt="Angikar Logo">
     <h1>Angikar Employees Co-operative Society Ltd.</h1>
-    <h2>Registration No. - 00323</h2>
-    <p>Tanin Center, 3/ Asad Gate, Mirpur Road, Mohammadpur, Dhaka-1207.</p>
-    <p class="contact">aecsl2017@gmail.com | 01701-204300</p>
+    <h3>Registration No. - 00323</h3>
+    <h3>Address: Tanin Center, 3/ Asad Gate, Mirpur Road, Mohammadpur, Dhaka-1207</h3>
+    <p>Email: aecsl2017@gmail.com | Phone: 01701-204300</p>
   </header>
 
-  <!-- Section 1 -->
+  <div class="form-menu">
+    <button onclick="scrollToSection('member')">🧾 New Member Form</button>
+    <button onclick="scrollToSection('investment')">💰 Investment Form</button>
+    <button onclick="scrollToSection('withdrawal')">🏦 Withdrawal Form</button>
+    <button onclick="scrollToSection('deposit')">🔄 Increase/Decrease</button>
+    <button onclick="scrollToSection('final')">✅ Final Settlement</button>
+  </div>
+
+  <!-- Form Sections -->
   <div class="section" id="member">
     <h3>🧾 New Member Application Form</h3>
-    <div class="files">
-      <a href="https://docs.google.com/document/d/1btn6xw_YmmGD9kC0JUo0LRFV5RA8Aq9j/edit?usp=sharing" target="_blank">Download - MSA Word Document </a>
-      <a href="https://drive.google.com/file/d/1QBb9Kdu-2glI__V0UP8JbNN8XP420skC/view?usp=sharing" target="_blank">Download - MSA PDF File</a>
-      <a href="https://docs.google.com/document/d/1b79fLMfOxmSccY-HHC_bupJV0ObW8NIB/edit?usp=sharing" target="_blank">Download - MMPDA Word Document </a>
-      <a href="https://drive.google.com/file/d/1cXxLP_GaXUXJQ3d-XdPXC74ZlFitr-O2/view?usp=sharing" target="_blank">Download - MMPDA PDF File </a>
-    </div>
+    <a href="https://docs.google.com/document/d/1btn6xw_YmmGD9kC0JUo0LRFV5RA8Aq9j/edit?usp=sharing" target="_blank">Form 1</a>
+    <a href="https://drive.google.com/file/d/1QBb9Kdu-2glI__V0UP8JbNN8XP420skC/view?usp=sharing" target="_blank">Form 2</a>
+    <a href="https://docs.google.com/document/d/1b79fLMfOxmSccY-HHC_bupJV0ObW8NIB/edit?usp=sharing" target="_blank">Form 3</a>
+    <a href="https://drive.google.com/file/d/1cXxLP_GaXUXJQ3d-XdPXC74ZlFitr-O2/view?usp=sharing" target="_blank">Form 4</a>
   </div>
 
-  <!-- Section 2 -->
   <div class="section" id="investment">
     <h3>💰 Investment Application Form</h3>
-    <div class="files">
-      <a href="https://drive.google.com/drive/folders/12iMHY8oRSQvNFhkYoVu3dvGXkP_xsoTv?usp=sharing" target="_blank">View All Investment Documents</a>
-    </div>
+    <a href="https://drive.google.com/drive/folders/12iMHY8oRSQvNFhkYoVu3dvGXkP_xsoTv?usp=sharing" target="_blank">Open Folder</a>
   </div>
 
-  <!-- Section 3 -->
   <div class="section" id="withdrawal">
     <h3>🏦 Deposit Withdrawal Form</h3>
-    <div class="files">
-      <a href="https://drive.google.com/drive/folders/1xVaJh0D2uot7BuBdBKeqm0Yn_zOCXQ3C?usp=sharing" target="_blank">View All Withdrawal Documents</a>
-    </div>
+    <a href="https://drive.google.com/drive/folders/1xVaJh0D2uot7BuBdBKeqm0Yn_zOCXQ3C?usp=sharing" target="_blank">Open Folder</a>
   </div>
 
-  <!-- Section 4 -->
-  <div class="section" id="Increase/Decrease">
-    <h3>🔄 Deposit Increase/Decrease Form</h3>
-    <div class="files">
-      <a href="https://docs.google.com/document/d/1qh9HzbGAdaNm0WDdQbMVmHpKnK7mM7F_/edit?usp=sharing" target="_blank">Download - Increase/Decrease Form Word Document</a>
-      <a href="https://drive.google.com/file/d/18Lymev9llDCPKO9h9OMwP5DAsN2sD_nS/view?usp=sharing" target="_blank">Download - Increase/Decrease Form PDF File</a>
-    </div>
+  <div class="section" id="deposit">
+    <h3>🔄 Deposit Increase / Decrease Form</h3>
+    <a href="https://docs.google.com/document/d/1qh9HzbGAdaNm0WDdQbMVmHpKnK7mM7F_/edit?usp=sharing" target="_blank">Word Document</a>
+    <a href="https://drive.google.com/file/d/18Lymev9llDCPKO9h9OMwP5DAsN2sD_nS/view?usp=sharing" target="_blank">PDF File</a>
   </div>
 
-  <!-- Section 5 -->
-  <div class="section" id="final Settlement">
+  <div class="section" id="final">
     <h3>✅ Final Settlement Form</h3>
-    <div class="files">
-      <a href="https://drive.google.com/file/d/1w4lHRgyc9mNigV7zI25ci96xQtpA4K0w/view?usp=sharing" target="_blank">Download - PDF File</a>
-      <a href="https://docs.google.com/document/d/1JavOnconI9XgBqEyXXiuyFwns2-uyaQU/edit?usp=sharing" target="_blank">Download - Word Document</a>
-    </div>
+    <a href="https://drive.google.com/file/d/1w4lHRgyc9mNigV7zI25ci96xQtpA4K0w/view?usp=sharing" target="_blank">PDF File</a>
+    <a href="https://docs.google.com/document/d/1JavOnconI9XgBqEyXXiuyFwns2-uyaQU/edit?usp=sharing" target="_blank">Word Document</a>
   </div>
+
+  <script>
+    function scrollToSection(id) {
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
 
 </body>
 </html>
