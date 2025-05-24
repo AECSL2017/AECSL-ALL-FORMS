@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,17 +12,11 @@
       background-size: cover;
       color: white;
       text-align: center;
-      padding-top: 300px;
     }
 
     header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      padding: 20px;
+      padding: 30px 20px 10px;
       background: rgba(0, 0, 0, 0.6);
-      z-index: 1000;
     }
 
     header img {
@@ -45,56 +40,53 @@
       font-size: 16px;
     }
 
-    .form-menu {
-      position: fixed;
-      top: 50%;
-      left: 20px;
-      transform: translateY(-50%);
-      background: rgba(0, 0, 0, 0.7);
-      padding: 12px;
-      border-radius: 8px;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      z-index: 1001;
+    .tab-container {
+      margin: 30px auto;
+      max-width: 900px;
     }
 
-    .form-menu button {
+    .tabs {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .tab-button {
       background-color: #1e90ff;
-      color: white;
       border: none;
-      padding: 8px 12px;
-      border-radius: 4px;
+      color: white;
+      padding: 12px 20px;
       cursor: pointer;
-      font-size: 14px;
+      font-size: 16px;
+      border-radius: 6px;
       transition: background-color 0.3s;
     }
 
-    .form-menu button:hover {
+    .tab-button:hover, .tab-button.active {
       background-color: #63b3ed;
     }
 
-    .section {
-      margin: 60px auto;
-      max-width: 800px;
+    .tab-content {
+      display: none;
       background: rgba(0, 0, 0, 0.5);
       padding: 20px;
-      border-radius: 10px;
+      border-radius: 8px;
     }
 
-    .section h3 {
-      font-size: 22px;
-      margin-bottom: 15px;
+    .tab-content.active {
+      display: block;
     }
 
-    .section a {
+    .tab-content a {
       color: #87cefa;
       display: block;
       margin: 6px 0;
       text-decoration: none;
     }
 
-    .section a:hover {
+    .tab-content a:hover {
       text-decoration: underline;
     }
   </style>
@@ -109,48 +101,47 @@
     <p>Email: aecsl2017@gmail.com | Phone: 01701-204300</p>
   </header>
 
-  <div class="form-menu">
-    <button onclick="scrollToSection('member')">🧾 New Member Form</button>
-    <button onclick="scrollToSection('investment')">💰 Investment Form</button>
-    <button onclick="scrollToSection('withdrawal')">🏦 Withdrawal Form</button>
-    <button onclick="scrollToSection('deposit')">🔄 Increase/Decrease</button>
-    <button onclick="scrollToSection('final')">✅ Final Settlement</button>
-  </div>
+  <div class="tab-container">
+    <div class="tabs">
+      <button class="tab-button active" onclick="openTab('tab1')">🧾 New Member</button>
+      <button class="tab-button" onclick="openTab('tab2')">💰 Investment</button>
+      <button class="tab-button" onclick="openTab('tab3')">🏦 Withdrawal</button>
+      <button class="tab-button" onclick="openTab('tab4')">🔄 Deposit +/-</button>
+      <button class="tab-button" onclick="openTab('tab5')">✅ Final Settlement</button>
+    </div>
 
-  <!-- Form Sections -->
-  <div class="section" id="member">
-    <h3>🧾 New Member Application Form</h3>
-    <a href="https://docs.google.com/document/d/1btn6xw_YmmGD9kC0JUo0LRFV5RA8Aq9j/edit?usp=sharing" target="_blank">Form 1</a>
-    <a href="https://drive.google.com/file/d/1QBb9Kdu-2glI__V0UP8JbNN8XP420skC/view?usp=sharing" target="_blank">Form 2</a>
-    <a href="https://docs.google.com/document/d/1b79fLMfOxmSccY-HHC_bupJV0ObW8NIB/edit?usp=sharing" target="_blank">Form 3</a>
-    <a href="https://drive.google.com/file/d/1cXxLP_GaXUXJQ3d-XdPXC74ZlFitr-O2/view?usp=sharing" target="_blank">Form 4</a>
-  </div>
+    <div id="tab1" class="tab-content active">
+      <a href="https://docs.google.com/document/d/1btn6xw_YmmGD9kC0JUo0LRFV5RA8Aq9j/edit?usp=sharing" target="_blank">Form 1</a>
+      <a href="https://drive.google.com/file/d/1QBb9Kdu-2glI__V0UP8JbNN8XP420skC/view?usp=sharing" target="_blank">Form 2</a>
+      <a href="https://docs.google.com/document/d/1b79fLMfOxmSccY-HHC_bupJV0ObW8NIB/edit?usp=sharing" target="_blank">Form 3</a>
+      <a href="https://drive.google.com/file/d/1cXxLP_GaXUXJQ3d-XdPXC74ZlFitr-O2/view?usp=sharing" target="_blank">Form 4</a>
+    </div>
 
-  <div class="section" id="investment">
-    <h3>💰 Investment Application Form</h3>
-    <a href="https://drive.google.com/drive/folders/12iMHY8oRSQvNFhkYoVu3dvGXkP_xsoTv?usp=sharing" target="_blank">Open Folder</a>
-  </div>
+    <div id="tab2" class="tab-content">
+      <a href="https://drive.google.com/drive/folders/12iMHY8oRSQvNFhkYoVu3dvGXkP_xsoTv?usp=sharing" target="_blank">Open Investment Folder</a>
+    </div>
 
-  <div class="section" id="withdrawal">
-    <h3>🏦 Deposit Withdrawal Form</h3>
-    <a href="https://drive.google.com/drive/folders/1xVaJh0D2uot7BuBdBKeqm0Yn_zOCXQ3C?usp=sharing" target="_blank">Open Folder</a>
-  </div>
+    <div id="tab3" class="tab-content">
+      <a href="https://drive.google.com/drive/folders/1xVaJh0D2uot7BuBdBKeqm0Yn_zOCXQ3C?usp=sharing" target="_blank">Open Withdrawal Folder</a>
+    </div>
 
-  <div class="section" id="deposit">
-    <h3>🔄 Deposit Increase / Decrease Form</h3>
-    <a href="https://docs.google.com/document/d/1qh9HzbGAdaNm0WDdQbMVmHpKnK7mM7F_/edit?usp=sharing" target="_blank">Word Document</a>
-    <a href="https://drive.google.com/file/d/18Lymev9llDCPKO9h9OMwP5DAsN2sD_nS/view?usp=sharing" target="_blank">PDF File</a>
-  </div>
+    <div id="tab4" class="tab-content">
+      <a href="https://docs.google.com/document/d/1qh9HzbGAdaNm0WDdQbMVmHpKnK7mM7F_/edit?usp=sharing" target="_blank">Word Document</a>
+      <a href="https://drive.google.com/file/d/18Lymev9llDCPKO9h9OMwP5DAsN2sD_nS/view?usp=sharing" target="_blank">PDF File</a>
+    </div>
 
-  <div class="section" id="final">
-    <h3>✅ Final Settlement Form</h3>
-    <a href="https://drive.google.com/file/d/1w4lHRgyc9mNigV7zI25ci96xQtpA4K0w/view?usp=sharing" target="_blank">PDF File</a>
-    <a href="https://docs.google.com/document/d/1JavOnconI9XgBqEyXXiuyFwns2-uyaQU/edit?usp=sharing" target="_blank">Word Document</a>
+    <div id="tab5" class="tab-content">
+      <a href="https://drive.google.com/file/d/1w4lHRgyc9mNigV7zI25ci96xQtpA4K0w/view?usp=sharing" target="_blank">PDF File</a>
+      <a href="https://docs.google.com/document/d/1JavOnconI9XgBqEyXXiuyFwns2-uyaQU/edit?usp=sharing" target="_blank">Word Document</a>
+    </div>
   </div>
 
   <script>
-    function scrollToSection(id) {
-      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    function openTab(tabId) {
+      document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+      document.getElementById(tabId).classList.add('active');
+      event.target.classList.add('active');
     }
   </script>
 
