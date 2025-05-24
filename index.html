@@ -5,6 +5,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Angikar Employees Co-operative Society Ltd.</title>
   <style>
+    .form-menu {
+  position: fixed;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.7);
+  padding: 12px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 1001;
+}
+
+.form-menu button {
+  background-color: #1e90ff;
+  color: green;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+.form-menu button:hover {
+  background-color: #63b3ed;
+}
+<script>
+  function scrollToSection(id) {
+    document.getElementById(id).scrollIntoView({
+      behavior: 'smooth'
+    });
+  }
+</script>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -16,8 +50,17 @@
     header {
   padding: 10px 10px 10px;
     }
+    <!-- Floating Chart Box -->
+<div class="form-menu">
+  <button onclick="scrollToSection('member')">🧾 New Member Form</button>
+  <button onclick="scrollToSection('investment')">💰 Investment Form</button>
+  <button onclick="scrollToSection('withdrawal')">🏦 Withdrawal Form</button>
+  <button onclick="scrollToSection('Increase/Decrease')">🔄 Increase/Decrease</button>
+  <button onclick="scrollToSection('final Settlement')">✅ Final Settlement</button>
+</div>
+
     header img {
-  width: 160px;
+  width: 120px;
   height: auto;
   margin-bottom: 5px;
     }
@@ -81,7 +124,7 @@
   </header>
 
   <!-- Section 1 -->
-  <div class="section">
+  <div class="section" id="member">
     <h3>🧾 New Member Application Form</h3>
     <div class="files">
       <a href="https://docs.google.com/document/d/1btn6xw_YmmGD9kC0JUo0LRFV5RA8Aq9j/edit?usp=sharing" target="_blank">Download - MSA Word Document </a>
@@ -92,7 +135,7 @@
   </div>
 
   <!-- Section 2 -->
-  <div class="section">
+  <div class="section" id="investment">
     <h3>💰 Investment Application Form</h3>
     <div class="files">
       <a href="https://drive.google.com/drive/folders/12iMHY8oRSQvNFhkYoVu3dvGXkP_xsoTv?usp=sharing" target="_blank">View All Investment Documents</a>
@@ -100,7 +143,7 @@
   </div>
 
   <!-- Section 3 -->
-  <div class="section">
+  <div class="section" id="withdrawal">
     <h3>🏦 Deposit Withdrawal Form</h3>
     <div class="files">
       <a href="https://drive.google.com/drive/folders/1xVaJh0D2uot7BuBdBKeqm0Yn_zOCXQ3C?usp=sharing" target="_blank">View All Withdrawal Documents</a>
@@ -108,7 +151,7 @@
   </div>
 
   <!-- Section 4 -->
-  <div class="section">
+  <div class="section" id="Increase/Decrease">
     <h3>🔄 Deposit Increase/Decrease Form</h3>
     <div class="files">
       <a href="https://docs.google.com/document/d/1qh9HzbGAdaNm0WDdQbMVmHpKnK7mM7F_/edit?usp=sharing" target="_blank">Download - Increase/Decrease Form Word Document</a>
@@ -117,7 +160,7 @@
   </div>
 
   <!-- Section 5 -->
-  <div class="section">
+  <div class="section" id="final Settlement">
     <h3>✅ Final Settlement Form</h3>
     <div class="files">
       <a href="https://drive.google.com/file/d/1w4lHRgyc9mNigV7zI25ci96xQtpA4K0w/view?usp=sharing" target="_blank">Download - PDF File</a>
