@@ -8,8 +8,10 @@
     body {
       margin: 0;
       font-family: Arial, Times New Roman;
-      background: url('Flux_Dev_A_majestic_Islamic_Mosque_stands_serenely_in_front_of_0.jpg') no-repeat center center fixed;
       background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      transition: background-image 1s ease-in-out;
       color: yellow;
       text-align: center;
     }
@@ -68,6 +70,16 @@
     <a href="form5.html" class="tab-button">✅ Final Settlement</a>
   </div>
 </div>
+<script>
+  const backgrounds = ['bg1.jpg', 'bg2.jpg', 'bg3.jpg', 'bg4.jpg'];
+  let index = 0;
+  function changeBackground() {
+    document.body.style.backgroundImage = "url('" + backgrounds[index] + "')";
+    index = (index + 1) % backgrounds.length;
+  }
+  changeBackground();
+  setInterval(changeBackground, 5000);
+</script>
 
 </body>
 </html>
