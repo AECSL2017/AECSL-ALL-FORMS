@@ -5,6 +5,40 @@
   <title>AECSL Homepage</title>
   <link rel="icon" type="image/png" href="favicon.png">
   <style>
+    #clock-date {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  text-align: right;
+  font-size: 16px;
+  z-index: 1000;
+}
+
+#calendar {
+  margin-top: 10px;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+#calendar table {
+  width: 100%;
+  border-collapse: collapse;
+  color: white;
+}
+
+#calendar th, #calendar td {
+  padding: 4px;
+  text-align: center;
+}
+
+#calendar td.today {
+  background-color: #1e90ff;
+  color: white;
+  font-weight: bold;
+  border-radius: 50%;
+}
     body {
       margin: 0;
       font-family: Arial, Times New Roman;
@@ -49,6 +83,12 @@
 <body>
 
 <header>
+  <div id="clock-date">
+  <div id="time"></div>
+  <div id="day-date"></div>
+  <div id="calendar"></div>
+</div>
+
   <img src="Angikar-Logo-Final.png" alt="Angikar Logo" style="width: 140px; height: auto; margin-bottom: 10px;">
   <h1 style="font-size: 35px; margin: 10px 0 5px;">Angikar Employees Co-operative Society Ltd.</h1>
   <h3 style="font-size: 15px; margin: 5px 0;">[A Co-operative of the IBN SINA Pharmaceutical Industry PLC's Employees]</h3>
@@ -56,8 +96,7 @@
   <h3 style="font-size: 18px; margin: 5px 0;">Address: Tanin Center, 3/ Asad Gate, Mirpur Road, Mohammadpur, Dhaka-1207</h3>
   <p style="font-size: 17px;">Email: aecsl2017@gmail.com | Phone & WhatsApp: 01701-204300</p>
 </header>
-
-
+  
 <div class="tab-container">
   <div class="tabs-row">
     <a href="form1.html" class="tab-button">🧾 New Member</a>
@@ -80,6 +119,45 @@
   }
   changeBackground();
   setInterval(changeBackground, 5000);
+</script>
+<script>
+  function updateClock() {
+    const now = new Date();
+    const time = now.toLocaleTimeString();
+    const date = now.toLocaleDateString(undefined, { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+    document.getElementById('time').textContent = time;
+    document.getElementById('day-date').textContent = date;
+  }
+
+  function renderCalendar() {
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = now.getMonth();
+    const today = now.getDate();
+    const firstDay = new Date(year, month, 1).getDay();
+    const lastDate = new Date(year, month + 1, 0).getDate();
+    const weekdays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
+    let html = '<h4>' + now.toLocaleString('default', { month: 'long' }) + ' ' + year + '</h4>';
+    html += '<table><tr>' + weekdays.map(d => '<th>' + d + '</th>').join('') + '</tr><tr>';
+
+    for (let i = 0; i < firstDay; i++) {
+      html += '<td></td>';
+    }
+
+    for (let day = 1; day <= lastDate; day++) {
+      if ((firstDay + day - 1) % 7 === 0 && day !== 1) html += '</tr><tr>';
+      const isToday = (day === today) ? ' class="today"' : '';
+      html += `<td${isToday}>${day}</td>`;
+    }
+
+    html += '</tr></table>';
+    document.getElementById('calendar').innerHTML = html;
+  }
+
+  updateClock();
+  renderCalendar();
+  setInterval(updateClock, 1000);
 </script>
 
 </body>
