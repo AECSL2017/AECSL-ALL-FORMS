@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AECSL Homepage</title>
   <link rel="icon" type="image/png" href="favicon.png">
   <style>
@@ -49,35 +50,67 @@
       color: yellow;
       text-align: center;
       min-height: 100vh;
+      overflow-x: hidden;
     }
     header {
-      padding: 30px 20px 10px;
-      background: rgba(0, 0, 0, 0);
+      text-align: center;
+      padding: 30px 15px;
+      header img {
+  max-width: 100%;
+  height: auto;
+    }
     }
     .tab-container {
-      margin-top: 40px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 20px;
+      gap: 15px;
+      padding: 10px;
     }
     .tabs-row {
       display: flex;
-      gap: 15px;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
     }
     .tab-button {
-      background-color: #FF5733;
-      border: none;
-      color: white;
-      padding: 14px 24px;
-      text-decoration: none;
-      font-size: 30px;
-      border-radius: 0px;
-      transition: background-color 0.3s;
+  flex: 1 1 45%;
+  padding: 12px 16px;
+  font-size: 16px;
+  text-align: center;
+  margin: 5px;
+  max-width: 100%;
     }
     .tab-button:hover {
       background-color: #5BFF33;
     }
+    
+    img {
+  max-width: 100%;
+  height: auto;
+   }
+    @media (max-width: 768px) {
+  h1 {
+    font-size: 22px;
+  }
+
+  .tab-button {
+    font-size: 14px;
+    padding: 10px;
+    width: 100%;
+  }
+
+  #clock-date {
+    font-size: 14px;
+    right: 10px;
+    top: 10px;
+  }
+
+  .tabs-row {
+    flex-direction: column;
+  }
+}
+
   </style>
 </head>
 <body>
